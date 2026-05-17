@@ -1,0 +1,53 @@
+# 📁 Sumber Dataset: The Look E-Commerce
+
+**Tautan Resmi (Kaggle):**
+[The Look E-Commerce BigQuery Dataset](https://www.kaggle.com/datasets/mustafakeser4/looker-ecommerce-bigquery-dataset?select=events.csv)
+
+Untuk mereproduksi (*reproduce*) analisis dan dashboard dalam proyek ini, silakan unduh dataset secara langsung melalui tautan Kaggle di atas, lalu impor file CSV tersebut ke dalam Relational Database (seperti PostgreSQL, MySQL, atau BigQuery) milik Anda.
+
+---
+
+## 📖 Kamus Data (Data Dictionary) Singkat
+
+Berikut adalah 5 tabel utama yang diekstrak dan digunakan untuk membangun *Star Schema* dalam proyek analitik ini:
+
+### 1. `events` (Log Aktivitas Website) - *2.431.963 baris*
+Tabel ini merupakan tulang punggung Halaman 3 (Website Analytics) yang merekam setiap klik pengunjung.
+* `id`: ID unik aktivitas.
+* `user_id`: ID pengguna (berisi null untuk tamu/guest).
+* `session_id`: ID penjelajahan untuk melacak satu siklus kunjungan web.
+* `created_at`: Waktu (timestamp) aktivitas terjadi.
+* `event_type`: Jenis aktivitas (`home`, `department`, `product`, `cart`, `purchase`, `cancel`).
+* `traffic_source`: Sumber asal pengunjung (`Adwords`, `Email`, `Facebook`, `Organic`, `YouTube`).
+* `browser`: Alat peramban yang digunakan.
+
+### 2. `orders` (Data Transaksi Induk) - *125.226 baris*
+Merekam status transaksi level pesanan.
+* `order_id`: ID unik pesanan.
+* `user_id`: Pembeli yang melakukan pesanan.
+* `status`: Status akhir pesanan (`Complete`, `Cancelled`, `Returned`, `Processing`, `Shipped`).
+* `created_at`: Waktu pesanan dibuat.
+
+### 3. `order_items` (Rincian Item Transaksi) - *181.759 baris*
+Merekam nilai finansial dan produk yang dibeli dalam satu pesanan. Tabel fakta utama untuk Halaman 1.
+* `id`: ID unik rincian item.
+* `order_id`: Merujuk ke tabel `orders`.
+* `product_id`: Merujuk ke tabel `products`.
+* `sale_price`: Harga jual produk (digunakan untuk menghitung *Revenue*).
+* `created_at`: Waktu item terjual.
+
+### 4. `users` (Profil Pelanggan) - *100.000 baris*
+Tabel dimensi yang memuat informasi demografi pelanggan.
+* `id`: ID unik pelanggan.
+* `age`: Umur pelanggan.
+* `gender`: Jenis kelamin (M/F).
+* `country`: Negara asal pelanggan.
+* `traffic_source`: Saluran akuisisi saat pengguna pertama kali mendaftar.
+
+### 5. `products` (Katalog Produk) - *29.120 baris*
+Tabel dimensi inventaris barang.
+* `id`: ID unik produk.
+* `cost`: Harga modal / COGS (digunakan untuk menghitung *Profit* & *Margin*).
+* `category`: Kategori spesifik produk (`Jeans`, `Outerwear & Coats`, dll).
+* `retail_price`: Harga eceran standar.
+* `department`: Bagian utama pakaian (`Men`, `Women`).
