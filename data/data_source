@@ -1,7 +1,7 @@
 # 📁 Sumber Dataset: The Look E-Commerce
 
 **Tautan Resmi (Kaggle):**
-[The Look E-Commerce BigQuery Dataset](https://www.kaggle.com/datasets/mustafakeser4/looker-ecommerce-bigquery-dataset?select=events.csv)
+The Look E-Commerce BigQuery Dataset](https://www.kaggle.com/datasets/mustafakeser4/looker-ecommerce-bigquery-dataset?select=events.csv)
 
 Untuk mereproduksi (*reproduce*) analisis dan dashboard dalam proyek ini, silakan unduh dataset secara langsung melalui tautan Kaggle di atas, lalu impor file CSV tersebut ke dalam Relational Database (seperti PostgreSQL, MySQL, atau BigQuery) milik Anda.
 
