@@ -1,0 +1,1 @@
+dataset source link : https://www.kaggle.com/datasets/mustafakeser4/looker-ecommerce-bigquery-dataset?select=events.csv
