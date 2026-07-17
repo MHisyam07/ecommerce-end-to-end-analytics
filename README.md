@@ -1,5 +1,7 @@
 # 📊 End-to-End E-Commerce Analytics Dashboard: Commercial, Behavior & Web Funnel
-
+> ## Dashboard
+## Click Button Below To View Dashboard  
+[![Power BI](https://img.shields.io/badge/Power%20BI-Live%20Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/view?r=eyJrIjoiODEzNWZiNDEtMDc3MC00ZWM2LTg0NTYtZTU0MDQzZmZmYmI3IiwidCI6IjdmMzAxZGI5LTI4MWQtNGM5MS1hN2RlLTlkY2M1YjcyN2I2ZiJ9)
 ## 📌 Project Overview
 Proyek ini merupakan portofolio analisis data *end-to-end* yang mengeksplorasi data fiktif operasional platform e-commerce retail bernama **"The Look"**. Laporan ini dirancang secara arsitektural untuk memenuhi kebutuhan dua tipe audiens pemangku kepentingan:
 1. **Macro View (C-Level Executives):** Menyajikan performa kesehatan finansial, kontrol margin profitabilitas, dan tren revenue dari bulan ke bulan.
